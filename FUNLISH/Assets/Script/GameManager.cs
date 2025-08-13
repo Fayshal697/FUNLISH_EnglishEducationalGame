@@ -1,17 +1,19 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // perlu kalau mau load scene
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public int totalObjects = 3;  // jumlah total objek interaktif
+    public int totalObjects; // akan dihitung otomatis
     private int completedObjects = 0;
 
-    public GameObject finalQuizMarker; // marker/titik tujuan final quiz
-    public string quizSceneName = "FinalQuiz"; // nama scene quiz
+    public GameObject finalQuizMarker;
+    public string quizSceneName = "FinalQuiz";
 
-     private void Awake()
+    private bool quizStarted = false; // proteksi double scene load
+
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -26,6 +28,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        // Hitung jumlah objek interaktif di scene
+        totalObjects = FindObjectsByType<InteractiveObject>(FindObjectsSortMode.None).Length;
+
         if (finalQuizMarker != null)
             finalQuizMarker.SetActive(false);
     }
@@ -42,9 +47,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Method untuk memulai quiz
     public void StartFinalQuiz()
     {
+        if (quizStarted) return; // cegah double load
+        quizStarted = true;
+
         SceneManager.LoadScene(quizSceneName);
     }
 }

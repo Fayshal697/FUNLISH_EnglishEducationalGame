@@ -2,31 +2,28 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public GameObject goalPanel; // Panel misi awal
-    public GameObject player;    // Player untuk diaktifkan setelah start
+    public GameObject goalPanel; 
+    public GameObject player;    
 
     private Supercyan.FreeSample.SimpleSampleCharacterControl playerControl;
+    private Rigidbody playerRb;
 
     private void Start()
     {
-        // Ambil script kontrol player
         playerControl = player.GetComponent<Supercyan.FreeSample.SimpleSampleCharacterControl>();
+        playerRb = player.GetComponent<Rigidbody>();
 
-        // Pastikan panel aktif & player tidak bisa gerak
+        // Kunci player di awal
         goalPanel.SetActive(true);
-        if (playerControl != null)
-        {
-            playerControl.enabled = false;
-        }
+        if (playerControl != null) playerControl.enabled = false;
+        if (playerRb != null) playerRb.isKinematic = true;
     }
 
     public void StartGame()
     {
-        // Sembunyikan panel & aktifkan player
+        // Lepas kunci player
         goalPanel.SetActive(false);
-        if (playerControl != null)
-        {
-            playerControl.enabled = true;
-        }
+        if (playerControl != null) playerControl.enabled = true;
+        if (playerRb != null) playerRb.isKinematic = false;
     }
 }
