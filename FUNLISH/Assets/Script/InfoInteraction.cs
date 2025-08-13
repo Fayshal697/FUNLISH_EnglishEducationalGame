@@ -2,24 +2,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InfoBoardInteraction : MonoBehaviour
+public class InfoInteraction : MonoBehaviour
 {
     [Header("UI References")]
     public GameObject learningPanel;       // Panel UI pembelajaran
-    public Image contentImage;             // Gambar materi
-    public TMP_Text contentText;           // Teks materi
-    public AudioSource audioSource;        // Audio narasi
-    public AudioClip narrationClip;        // File audio narasi
+    public Image contentImage;              // Gambar materi
+    public TMP_Text contentText;            // Teks materi
 
     [Header("Content")]
-    public Sprite learningSprite;          // Gambar materi
-    [TextArea] public string learningText; // Teks materi
+    public Sprite learningSprite;           // Gambar materi
+    [TextArea] public string learningText;  // Teks materi
+    public AudioClip narrationClip;         // File audio narasi
 
     private bool isPlayerNear = false;
+    private AudioSource currentAudioSource; // Audio yang sedang diputar
 
     void Update()
     {
-        // Jika player dekat dan menekan tombol E
         if (isPlayerNear && Input.GetKeyDown(KeyCode.E))
         {
             ShowLearningPanel();
@@ -51,20 +50,29 @@ public class InfoBoardInteraction : MonoBehaviour
         contentImage.sprite = learningSprite;
         contentText.text = learningText;
 
-        // Putar narasi
+        // Buat AudioSource baru untuk narasi
         if (narrationClip != null)
         {
-            audioSource.clip = narrationClip;
-            audioSource.Play();
+            GameObject audioObj = new GameObject("NarrationAudio");
+            currentAudioSource = audioObj.AddComponent<AudioSource>();
+            currentAudioSource.clip = narrationClip;
+            currentAudioSource.Play();
         }
 
-        // Hentikan gerakan player (opsional, kalau mau freeze)
+        // Pause game (opsional)
         Time.timeScale = 0f;
     }
 
     public void CloseLearningPanel()
     {
         learningPanel.SetActive(false);
+
+        // Hentikan audio jika ada
+        if (currentAudioSource != null)
+        {
+            currentAudioSource.Stop();
+            Destroy(currentAudioSource.gameObject);
+        }
 
         // Resume game
         Time.timeScale = 1f;
