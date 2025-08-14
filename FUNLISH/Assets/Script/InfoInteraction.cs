@@ -5,52 +5,57 @@ using TMPro;
 public class InfoInteraction : MonoBehaviour
 {
     [Header("UI References")]
-    public GameObject learningPanel;       // Panel UI pembelajaran
-    public Image contentImage;              // Gambar materi
-    public TMP_Text contentText;            // Teks materi
+    public GameObject learningPanel;
+    public Image contentImage;
+    public TMP_Text contentText;
+    public TMP_Text nextMissionText;
 
     [Header("Content")]
-    public Sprite learningSprite;           // Gambar materi
-    [TextArea] public string learningText;  // Teks materi
-    public AudioClip narrationClip;         // File audio narasi
+    public Sprite learningSprite;
+    [TextArea] public string learningText;
+    [TextArea] public string nextGoalMissionText;
+    public AudioClip narrationClip;
 
     private bool isPlayerNear = false;
-    private AudioSource currentAudioSource; // Audio yang sedang diputar
+    private AudioSource currentAudioSource;
+    private InteractionPrompt prompt;
 
-    void Update()
+    private void Start()
     {
-        if (isPlayerNear && Input.GetKeyDown(KeyCode.E))
-        {
-            ShowLearningPanel();
-        }
+        prompt = FindFirstObjectByType<InteractionPrompt>();
     }
 
-    void OnTriggerEnter(Collider other)
+    private void Update()
+    {
+        if (isPlayerNear && Input.GetKeyDown(KeyCode.E))
+            ShowLearningPanel();
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             isPlayerNear = true;
-            Debug.Log("Player dekat dengan palang info. Tekan E untuk belajar.");
+            prompt?.ShowPrompt("Press E to read");
         }
     }
 
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             isPlayerNear = false;
+            prompt?.HidePrompt();
         }
     }
 
-    void ShowLearningPanel()
+    private void ShowLearningPanel()
     {
         learningPanel.SetActive(true);
-
-        // Set konten panel
         contentImage.sprite = learningSprite;
         contentText.text = learningText;
+        nextMissionText.text = nextGoalMissionText;
 
-        // Buat AudioSource baru untuk narasi
         if (narrationClip != null)
         {
             GameObject audioObj = new GameObject("NarrationAudio");
@@ -59,22 +64,17 @@ public class InfoInteraction : MonoBehaviour
             currentAudioSource.Play();
         }
 
-        // Pause game (opsional)
         Time.timeScale = 0f;
     }
 
     public void CloseLearningPanel()
     {
         learningPanel.SetActive(false);
-
-        // Hentikan audio jika ada
         if (currentAudioSource != null)
         {
             currentAudioSource.Stop();
             Destroy(currentAudioSource.gameObject);
         }
-
-        // Resume game
         Time.timeScale = 1f;
     }
 }

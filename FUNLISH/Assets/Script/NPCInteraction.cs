@@ -2,45 +2,43 @@ using UnityEngine;
 
 public class NPCInteraction : MonoBehaviour
 {
-    public GameObject dialogPanel;   // Panel UI untuk teks dialog
-    public AudioClip dialogAudio;    // Audio narasi
+    public GameObject dialogPanel;
+    public AudioClip dialogAudio;
     public KeyCode interactKey = KeyCode.E;
 
     private AudioSource audioSource;
     private bool playerInRange = false;
     private bool hasInteracted = false;
+    private InteractionPrompt prompt;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         dialogPanel.SetActive(false);
+        prompt = FindFirstObjectByType<InteractionPrompt>();
     }
 
     private void Update()
     {
         if (playerInRange && !hasInteracted && Input.GetKeyDown(interactKey))
-        {
             StartConversation();
-        }
     }
 
     private void StartConversation()
     {
-        // Tampilkan panel dialog
         dialogPanel.SetActive(true);
 
-        // Putar audio narasi
         if (dialogAudio != null && audioSource != null)
         {
             audioSource.clip = dialogAudio;
             audioSource.Play();
         }
 
-        // Tandai sudah interaksi sekali
         hasInteracted = true;
+        prompt?.HidePrompt();
 
-        // Opsional: sembunyikan panel setelah audio selesai
-        Invoke(nameof(HideDialog), dialogAudio.length);
+        if (dialogAudio != null)
+            Invoke(nameof(HideDialog), dialogAudio.length);
     }
 
     private void HideDialog()
@@ -53,6 +51,7 @@ public class NPCInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+            prompt?.ShowPrompt("Press E to talk");
         }
     }
 
@@ -61,6 +60,7 @@ public class NPCInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            prompt?.HidePrompt();
         }
     }
 }
