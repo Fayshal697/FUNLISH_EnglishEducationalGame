@@ -290,7 +290,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 129.19}
-  m_SizeDelta: {x: 438.8749, y: 158.3752}
+  m_SizeDelta: {x: 662.7293, y: 158.3752}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &76889496
 CanvasRenderer:
@@ -609,6 +609,7 @@ RectTransform:
   - {fileID: 182388108}
   - {fileID: 1739575984}
   - {fileID: 798705023}
+  - {fileID: 986676608}
   m_Father: {fileID: 233161607}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1182,7 +1183,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -66.110504}
-  m_SizeDelta: {x: 0, y: 106.221}
+  m_SizeDelta: {x: -294.7419, y: 106.221}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &546066138
 CanvasRenderer:
@@ -1864,7 +1865,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -216}
+  m_AnchoredPosition: {x: 0, y: -248}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &798705024
@@ -2006,10 +2007,10 @@ MonoBehaviour:
   starImage: {fileID: 76889497}
   motivationText: {fileID: 546066139}
   starSprites:
-  - {fileID: 21300000, guid: e1741ef923f8c4b45ab8136d3cab9bf6, type: 3}
-  - {fileID: 21300000, guid: 20a593a0eabc63a4184219c451e65788, type: 3}
-  - {fileID: 21300000, guid: 466014445e5ea6e42b2e7079824b6a78, type: 3}
-  - {fileID: 21300000, guid: 14c5f5816c601c04189d4481c4ca4603, type: 3}
+  - {fileID: 21300000, guid: af79a9b36f7128e46a1aaf7c16da75f0, type: 3}
+  - {fileID: 21300000, guid: 5936d6e0d407d244a99c9cc1d6ed92c9, type: 3}
+  - {fileID: 21300000, guid: a83b6edf732a8ae43adaf47c6e5f9e50, type: 3}
+  - {fileID: 21300000, guid: 6637514106bbcd94ca1fee29238523ae, type: 3}
   messages:
   - "It\u2019s okay! Try again and pay close attention to the sizes and features."
   - Great job! Look over the differences again and keep practicing
@@ -2023,7 +2024,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f41152d70a7edde4fa483f903b3e560b, type: 3}
   audioSource: {fileID: 1306466248}
   questions:
-  - questionText: Which animal is bigger?
+  - questionText: Which one is the biggest animal?
     questionImage: {fileID: 21300000, guid: 8da2a93fb412c7a48af5df49bc2979f8, type: 3}
     options:
     - Cat
@@ -2031,7 +2032,7 @@ MonoBehaviour:
     - Mouse
     - Rabbit
     correctAnswerIndex: 1
-  - questionText: Which fruit is smaller?
+  - questionText: Which fruit is smaller than a pumpkin?
     questionImage: {fileID: 21300000, guid: 0c218c7c2e907704f83099cb57936587, type: 3}
     options:
     - Watermelon
@@ -2039,7 +2040,7 @@ MonoBehaviour:
     - Strawberry
     - Pumpkin
     correctAnswerIndex: 2
-  - questionText: Which animal is slower?
+  - questionText: Which one is the slowest?
     questionImage: {fileID: 21300000, guid: 133b73e28476a5742bd31afe43f60e1d, type: 3}
     options:
     - Cheetah
@@ -2047,7 +2048,7 @@ MonoBehaviour:
     - Horse
     - Motorbike
     correctAnswerIndex: 1
-  - questionText: Which stick is shorter?
+  - questionText: Which stick is shorter than a pencil?
     questionImage: {fileID: 21300000, guid: c2aa0eb8c7e05de4fa655ed328a63e6a, type: 3}
     options:
     - Pencil
@@ -2070,6 +2071,142 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &986676607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 986676608}
+  - component: {fileID: 986676610}
+  - component: {fileID: 986676609}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &986676608
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986676607}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 190886049}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.00036621, y: 340}
+  m_SizeDelta: {x: 913.68, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &986676609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986676607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Answer These Questions Correctly!
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 22
+  m_fontSizeBase: 22
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &986676610
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986676607}
+  m_CullTransparentMesh: 1
 --- !u!1 &1066097810
 GameObject:
   m_ObjectHideFlags: 0
@@ -3119,6 +3256,135 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -230}
   m_SizeDelta: {x: 389.5278, y: 93.1203}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1470945011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1470945013}
+  - component: {fileID: 1470945012}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1470945012
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470945011}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9fcae440d6ef4024f82c095f74521172, type: 3}
+  m_Resource: {fileID: 8300000, guid: 9fcae440d6ef4024f82c095f74521172, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1470945013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470945011}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 906.98193, y: 486.16058, z: 292513.53}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1586448928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3410,7 +3676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 78}
+  m_AnchoredPosition: {x: 0, y: 63}
   m_SizeDelta: {x: 913.6792, y: 485.8684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1739575985
@@ -3669,8 +3935,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -59.829407}
-  m_SizeDelta: {x: 0, y: 119.6588}
+  m_AnchoredPosition: {x: 0, y: -53.300293}
+  m_SizeDelta: {x: 0, y: 106.6006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1850297988
 MonoBehaviour:
@@ -3692,7 +3958,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Answer This Questions Correctly!
+  m_text: final quiz level 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -4295,3 +4561,4 @@ SceneRoots:
   - {fileID: 602131089}
   - {fileID: 915267112}
   - {fileID: 1752690275}
+  - {fileID: 1470945013}
