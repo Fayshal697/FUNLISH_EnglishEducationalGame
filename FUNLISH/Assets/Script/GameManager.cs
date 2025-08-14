@@ -5,32 +5,20 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public int totalObjects; // akan dihitung otomatis
+    public int totalObjects = 3;  
     private int completedObjects = 0;
 
-    public GameObject finalQuizMarker;
-    public string quizSceneName = "FinalQuiz";
-
-    private bool quizStarted = false; // proteksi double scene load
+    public GameObject finalQuizMarker; // marker tujuan final quiz
+    public string quizSceneName = "FinalQuiz_Level3"; // nama scene quiz
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
     private void Start()
     {
-        // Hitung jumlah objek interaktif di scene
-        totalObjects = FindObjectsByType<InteractiveObject>(FindObjectsSortMode.None).Length;
-
         if (finalQuizMarker != null)
             finalQuizMarker.SetActive(false);
     }
@@ -41,17 +29,14 @@ public class GameManager : MonoBehaviour
 
         if (completedObjects >= totalObjects)
         {
-            Debug.Log("Semua objek sudah selesai!");
+            Debug.Log("Semua objektif selesai! Marker muncul.");
             if (finalQuizMarker != null)
                 finalQuizMarker.SetActive(true);
         }
     }
 
-    public void StartFinalQuiz()
+    public void GoToQuiz()
     {
-        if (quizStarted) return; // cegah double load
-        quizStarted = true;
-
         SceneManager.LoadScene(quizSceneName);
     }
 }

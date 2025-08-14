@@ -21,10 +21,10 @@ public class InteractiveObject : MonoBehaviour
     public AudioClip wrongAudio;
     public AudioClip narrationAudio; // 🎤 audio narasi soal
 
-
     private AudioSource audioSource;
     private bool playerInRange = false;
     private bool hasInteracted = false;
+    private bool isCompleted = false; // ✅ penanda objektif ini sudah selesai
 
     private void Start()
     {
@@ -39,7 +39,6 @@ public class InteractiveObject : MonoBehaviour
         else
             Debug.LogError("[InteractiveObject] Interaction Panel belum di-assign!");
 
-        // Cek jumlah jawaban
         if (answers == null || answers.Length < answerButtons.Length)
         {
             Debug.LogError("[InteractiveObject] Jumlah jawaban di Inspector kurang!");
@@ -66,7 +65,7 @@ public class InteractiveObject : MonoBehaviour
         objectImage.sprite = objectSprite;
         questionText.text = question;
 
-            // Mainkan narasi soal kalau ada
+        // 🎤 Mainkan narasi soal kalau ada
         if (narrationAudio != null && audioSource != null)
             audioSource.PlayOneShot(narrationAudio);
 
@@ -96,19 +95,30 @@ public class InteractiveObject : MonoBehaviour
 
     void CheckAnswer(int index)
     {
-        if (index == correctAnswerIndex)
-        {
-            Debug.Log("Jawaban benar");
-            if (correctAudio != null && audioSource != null) audioSource.PlayOneShot(correctAudio);
-        }
-        else
-        {
-            Debug.Log("Jawaban salah");
-            if (wrongAudio != null && audioSource != null) audioSource.PlayOneShot(wrongAudio);
-        }
+    // Cek dan mainkan audio sesuai jawaban
+    if (index == correctAnswerIndex)
+    {
+        Debug.Log("Jawaban benar");
+        if (correctAudio != null && audioSource != null) audioSource.PlayOneShot(correctAudio);
+    }
+    else
+    {
+        Debug.Log("Jawaban salah");
+        if (wrongAudio != null && audioSource != null) audioSource.PlayOneShot(wrongAudio);
+    }
 
-        hasInteracted = true;
-        interactionPanel.SetActive(false);
+    // ✅ Hitung objektif selesai, meskipun salah
+    if (!isCompleted)
+    {
+        isCompleted = true;
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ObjectCompleted();
+        }
+    }
+
+    hasInteracted = true;
+    interactionPanel.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
