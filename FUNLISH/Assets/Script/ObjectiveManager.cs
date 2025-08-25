@@ -1,48 +1,46 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class ObjectiveManager : MonoBehaviour
 {
-    public static ObjectiveManager Instance; // singleton biar gampang akses
+    public List<Objective> objectives;   // daftar objektif
+    public TextMeshProUGUI objectivesText;          // UI untuk menampilkan objektif
 
-    [Header("UI Objective References")]
-    public TextMeshProUGUI[] objectiveTexts; // assign di inspector
-    public TextMeshProUGUI completeText;
-
-    private bool[] objectivesCompleted;
-
-    private void Awake()
+    void UpdateUI()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        objectivesText.text = "";
+        bool allCompleted = true;
 
-        objectivesCompleted = new bool[objectiveTexts.Length];
-        completeText.text = "";
+        foreach (Objective obj in objectives)
+        {
+            if (obj.isCompleted)
+                objectivesText.text += "✔ " + obj.description + "\n";
+            else
+            {
+                objectivesText.text += "✘ " + obj.description + "\n";
+                allCompleted = false;
+            }
+        }
+
+        if (allCompleted)
+        {
+            objectivesText.text += "\n➡ Semua objektif selesai!\nPergi ke lokasi Quiz Akhir.";
+        }
     }
 
     public void CompleteObjective(int index)
     {
-        if (index < 0 || index >= objectivesCompleted.Length) return;
-
-        // tandai selesai
-        objectivesCompleted[index] = true;
-        objectiveTexts[index].text = "[✔] " + objectiveTexts[index].text.Substring(4); 
-        objectiveTexts[index].color = Color.green;
-
-        // cek kalau semua sudah selesai
-        if (AllObjectivesCompleted())
+        if (index >= 0 && index < objectives.Count)
         {
-            completeText.text = "✅ Semua objektif selesai!\nPergilah ke lokasi untuk memulai Quiz Akhir.";
-            completeText.color = Color.yellow;
+            objectives[index].isCompleted = true;
+            UpdateUI();
         }
     }
 
-    public bool AllObjectivesCompleted()
+    void Start()
     {
-        foreach (bool done in objectivesCompleted)
-        {
-            if (!done) return false;
-        }
-        return true;
+        UpdateUI();
     }
 }
