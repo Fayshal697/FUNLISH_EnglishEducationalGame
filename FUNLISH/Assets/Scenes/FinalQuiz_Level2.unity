@@ -2024,38 +2024,38 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f41152d70a7edde4fa483f903b3e560b, type: 3}
   audioSource: {fileID: 1306466248}
   questions:
-  - questionText: Which one is the biggest animal?
-    questionImage: {fileID: 21300000, guid: 8da2a93fb412c7a48af5df49bc2979f8, type: 3}
+  - questionText: He has a runny nose and keeps sneezing. What illness is that?
+    questionImage: {fileID: 21300000, guid: c9dd3e6f111868b49a1e7d80b5a4a203, type: 3}
     options:
-    - Cat
-    - Elephant
-    - Mouse
-    - Rabbit
+    - Cough
+    - Cold
+    - Headache
+    - Fever
     correctAnswerIndex: 1
-  - questionText: Which fruit is smaller than a pumpkin?
-    questionImage: {fileID: 21300000, guid: 0c218c7c2e907704f83099cb57936587, type: 3}
+  - questionText: She says his head is hurting badly.
+    questionImage: {fileID: 21300000, guid: 9da18913d71056d47ada9278b991e9e1, type: 3}
     options:
-    - Watermelon
-    - Pineapple
-    - Strawberry
-    - Pumpkin
-    correctAnswerIndex: 2
-  - questionText: Which one is the slowest?
-    questionImage: {fileID: 21300000, guid: 133b73e28476a5742bd31afe43f60e1d, type: 3}
+    - Headache
+    - Stomachache
+    - Fever
+    - Flu
+    correctAnswerIndex: 0
+  - questionText: He feels hot and very tired. Which illness is it?
+    questionImage: {fileID: 21300000, guid: 3f924f97564a2a34bb90c5709e96396f, type: 3}
     options:
-    - Cheetah
-    - Snail
-    - Horse
-    - Motorbike
+    - Cold
+    - Fever
+    - Stomachache
+    - Cough
     correctAnswerIndex: 1
-  - questionText: Which stick is shorter than a pencil?
-    questionImage: {fileID: 21300000, guid: c2aa0eb8c7e05de4fa655ed328a63e6a, type: 3}
+  - questionText: He feels pain in her belly after eating. What is it?
+    questionImage: {fileID: 21300000, guid: b3e1757bc982f704194b42c1eeea0eb3, type: 3}
     options:
-    - Pencil
-    - Chopstick
-    - Toothpick
-    - Broom
-    correctAnswerIndex: 2
+    - Cough
+    - Cold
+    - Fever
+    - Stomachache
+    correctAnswerIndex: 3
 --- !u!4 &915267112
 Transform:
   m_ObjectHideFlags: 0
@@ -3677,7 +3677,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.00077229, y: 33}
-  m_SizeDelta: {x: 913.6792, y: 485.8684}
+  m_SizeDelta: {x: 749.57, y: 485.8684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1739575985
 CanvasRenderer:
@@ -3958,7 +3958,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: final quiz level 3
+  m_text: final quiz level 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}

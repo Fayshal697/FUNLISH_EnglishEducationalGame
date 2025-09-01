@@ -47,8 +47,8 @@ namespace Supercyan.FreeSample
 
         private void Awake()
         {
-            if (!m_animator) { gameObject.GetComponent<Animator>(); }
-            if (!m_rigidBody) { gameObject.GetComponent<Animator>(); }
+            if (!m_animator) { m_animator = gameObject.GetComponent<Animator>(); }
+            if (!m_rigidBody) { m_rigidBody = gameObject.GetComponent<Rigidbody>(); }
         }
 
         private void OnCollisionEnter(Collision collision)
