@@ -13,6 +13,11 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Bab2_Klinik");
     }
 
+    public void LoadScene1()
+    {
+        SceneManager.LoadScene("Bab1_Cafe");
+    }
+
     public void FinalQuiz_Level3()
     {
         SceneManager.LoadScene("FinalQuiz_Level3");
